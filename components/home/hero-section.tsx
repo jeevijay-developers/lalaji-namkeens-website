@@ -1,16 +1,16 @@
-"use client"
+"use client";
 
-import Link from "next/link"
-import Image from "next/image"
-import { useLanguage } from "@/lib/language-context"
-import { Button } from "@/components/ui/button"
-import { ArrowRight, Star } from "lucide-react"
+import Link from "next/link";
+import Image from "next/image";
+import { useLanguage } from "@/lib/language-context";
+import { Button } from "@/components/ui/button";
+import { ArrowRight, Star } from "lucide-react";
 
 export function HeroSection() {
-  const { language } = useLanguage()
+  const { language } = useLanguage();
 
   return (
-    <section className="relative overflow-hidden bg-gradient-to-br from-[#1a5f5f] via-[#145050] to-[#0d4040]">
+    <section className="relative overflow-hidden bg-linear-to-br from-[#1a5f5f] via-[#145050] to-[#0d4040]">
       {/* Decorative pattern overlay */}
       <div className="absolute inset-0 opacity-5">
         <div
@@ -22,7 +22,7 @@ export function HeroSection() {
       </div>
 
       <div className="max-w-7xl mx-auto relative px-4 sm:px-6 lg:px-8">
-        <div className="grid lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-16 items-center min-h-[500px] sm:min-h-[560px] lg:min-h-[640px] py-12 sm:py-16 lg:py-20">
+        <div className="grid lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-16 items-center min-h-125 sm:min-h-140 lg:min-h-160 py-12 sm:py-16 lg:py-20">
           {/* Left Content */}
           <div className="max-w-xl space-y-4 sm:space-y-6">
             <div className="inline-flex items-center gap-2 px-3 sm:px-4 py-1 sm:py-1.5 text-xs font-bold bg-[#E63946] text-white rounded-full shadow-lg">
@@ -33,11 +33,19 @@ export function HeroSection() {
             <h1 className="font-heading text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight">
               {language === "en" ? (
                 <>
-                  We bring authentic <span className="text-[#FFB800] drop-shadow-sm">Indian Namkeen</span> to your door
+                  We bring authentic{" "}
+                  <span className="text-[#FFB800] drop-shadow-sm">
+                    Indian Namkeen
+                  </span>{" "}
+                  to your door
                 </>
               ) : (
                 <>
-                  हम प्रामाणिक <span className="text-[#FFB800] drop-shadow-sm">भारतीय नमकीन</span> आपके दरवाजे तक लाते हैं
+                  हम प्रामाणिक{" "}
+                  <span className="text-[#FFB800] drop-shadow-sm">
+                    भारतीय नमकीन
+                  </span>{" "}
+                  आपके दरवाजे तक लाते हैं
                 </>
               )}
             </h1>
@@ -48,7 +56,7 @@ export function HeroSection() {
                 : "पारंपरिक भारतीय स्नैक्स और प्रीमियम नमकीन ताजा डिलीवर करवाएं। 1980 से बेहतरीन सामग्री और पुरानी विधियों से बनाया गया।"}
             </p>
 
-            <div className="flex flex-col sm:flex-row gap-3 pt-2">
+            <div className="flex flex-row gap-3 pt-2 mb-1">
               <Link href="/products">
                 <Button
                   size="lg"
@@ -69,7 +77,7 @@ export function HeroSection() {
               </Link>
             </div>
 
-            <div className="flex flex-col xs:flex-row items-start xs:items-center gap-4 sm:gap-6 pt-4">
+            <div className="flex flex-row items-start xs:items-center gap-4 sm:gap-6 pt-4 mb-4">
               <div className="flex items-center gap-2">
                 <div className="h-10 w-10 rounded-full bg-white/10 flex items-center justify-center">
                   <span className="text-lg">🏆</span>
@@ -95,7 +103,7 @@ export function HeroSection() {
           <div className="relative hidden sm:flex items-center justify-center lg:justify-end">
             <div className="relative w-full max-w-sm md:max-w-md lg:max-w-lg">
               {/* Glow effect */}
-              <div className="absolute inset-0 bg-gradient-to-br from-[#c9a961]/30 to-[#FFB800]/20 rounded-full blur-3xl scale-110" />
+              <div className="absolute inset-0 bg-linear-to-br from-[#c9a961]/30 to-[#FFB800]/20 rounded-full blur-3xl scale-110" />
 
               <div className="relative z-10 rounded-2xl overflow-hidden shadow-2xl">
                 <Image
@@ -114,10 +122,18 @@ export function HeroSection() {
 
       {/* Bottom wave */}
       <div className="absolute bottom-0 left-0 right-0">
-        <svg viewBox="0 0 1440 60" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full">
-          <path d="M0 60V30C240 10 480 0 720 10C960 20 1200 40 1440 30V60H0Z" fill="#f8f8f8" />
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 1440 80"
+          preserveAspectRatio="none"
+          className="w-full h-16 sm:h-20"
+        >
+          <path
+            fill="#fff"
+            d="M0,40 C240,20 480,10 720,20 C960,30 1200,50 1440,40 L1440,80 L0,80 Z"
+          ></path>
         </svg>
       </div>
     </section>
-  )
+  );
 }
